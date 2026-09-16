@@ -1,18 +1,24 @@
 <?php
-$numbers = array(1, 2, 3);
-$numbers = [1, 2, 3];
-var_dump($numbers[1]);
-$numbers[2] = 5;
-var_dump($numbers[2]);
-$test = [1, 'ldldl', true, [1, 2, 3]];
-var_dump($test);
-var_dump($test[3][1]);
-$test = [
-  'name' => 'Maksim',
-  'age' => 18,
-  1,
-  2,
-  3,
-  'color' => 'green',
-];
-var_dump($test['name']);
+
+class Box {
+   public $width;
+   public $height;
+   public $lenght;
+
+   public function volume(){
+    return $this->width * $this->height * $this->lenght;
+   }
+}
+
+$box1 = new Box();
+$box1->width = 1;
+$box1->height = 2;
+$box1->lenght = 3;
+var_dump($box1, $box1->volume());
+
+$box2 = new Box();
+$box2->width = 3;
+$box2->height = 4;
+$box2->lenght = 5;
+var_dump($box2, $box2->volume());
+var_dump($box1, $box1->volume());
