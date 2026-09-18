@@ -28,7 +28,7 @@ var_dump($metal1);
 
 trait HasColor {
    public $color;
-   public function setColor($color) [
+   public function setColor($color) {
       $this->color = $color;
-   ]
+   }
 }
