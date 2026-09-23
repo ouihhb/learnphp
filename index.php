@@ -1,34 +1,42 @@
 <?php
 
-class Box {
-   use HasColor;
-   public $width;
-   private $height;
-   protected $lenght;
+//library
 
-
-   public function volume(){
-    return $this->width * $this->height * $this->lenght;
+class Job {
+   public function task(ConsoleLogger|NothingLogger $logger) {
+      for($i=0; $i<10; $i++) {
+         //we do some task
+         $logger = new ConsoleLogger();
+         $logger->log("Task $i completed!");
+      }
    }
 }
 
-class MetalBox extends Box {
-   public $weightPerUnit;
-   public function mass(){
-    return $this->volume() * $this->weightPerUnit;
+class ConsoleLogger implements Logger {
+   public function log($message) {
+       echo "$message\n";
    }
 }
 
-$box1 =new Box();
-$box1->height = 10;
-var_dump($box1->lenght);
+class NothingLogger implements Logger{
+    public function log($message) {
+       
+}
+}
 
-$metal1 = new MetalBox();
-var_dump($metal1);
+interface Logger {
+   public function log($message);
+}
+// user code
 
-trait HasColor {
-   public $color;
-   public function setColor($color) {
-      $this->color = $color;
+class FileLogger implements Logger {
+   public function log($message) {
+      $file = fopen('log.txt', 'a');
+      fwrite($file, "$message\n");
+      fclose($file);
    }
 }
+
+$job = new Job();
+$logger = new FileLogger();
+$job->task($logger);
