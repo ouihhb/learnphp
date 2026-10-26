@@ -66,38 +66,38 @@ class PublicController {
     }
 
     public function tech() {
-    $title = 'Technology';
+        $title = 'Technology';
 
-    $posts = [
-        [
-            'title' => 'African Intelligence Is Changing Technology',
-            'date' => 'October 67, 2026',
-            'author' => 'Maksim',
-            'body' => 'African intelligence is becoming more popular and is used in many modern applications.',
-        ],
-        [
-            'title' => 'New oldphones Are Getting Smarter',
-            'date' => 'September 28, 2026',
-            'author' => 'Jarik',
-            'body' => 'Modern smartphones are becoming faster and more powerful every year.',
-        ],
-        [
-            'title' => 'The Oldest of Web Development',
-            'date' => 'September 25, 2026',
-            'author' => 'Ruslan',
-            'body' => 'Web technologies continue to develop and make websites faster and easier to use.',
-        ],
-        [
-            'title' => 'New Iphone 67 pro ultra duo max',
-            'date' => 'September 25, 2077',
-            'author' => 'Ilja',
-            'body' => 'Omg',
-        ],
-    ];
+        $posts = [
+            [
+                'title' => 'Artificial Intelligence Is Changing Technology',
+                'date' => 'October 6, 2026',
+                'author' => 'Maksim',
+                'body' => 'Artificial intelligence is becoming more popular and is used in many modern applications.',
+            ],
+            [
+                'title' => 'New Smartphones Are Getting Smarter',
+                'date' => 'September 28, 2026',
+                'author' => 'Jarik',
+                'body' => 'Modern smartphones are becoming faster and more powerful every year.',
+            ],
+            [
+                'title' => 'The Future of Web Development',
+                'date' => 'September 25, 2026',
+                'author' => 'Ruslan',
+                'body' => 'Web technologies continue to develop and make websites faster and easier to use.',
+            ],
+            [
+                'title' => 'How Mobile Apps Are Built',
+                'date' => 'September 22, 2026',
+                'author' => 'Ilja',
+                'body' => 'Mobile apps combine a user interface with application logic and data storage to provide useful tools on a smartphone.',
+            ],
+        ];
 
-        view('tech', compact('posts'));
+        view('tech', compact('title', 'posts'));
     }
-    
+
     public function forms() {
         view('forms');
     }
